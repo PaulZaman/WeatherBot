@@ -14,7 +14,7 @@ class Chatbot:
             "greetings": ["hello", "hi", "hey", "howdy", "hullo"],
             "feeling": ["how are you", "how is it going", "how do you do"],
             "goodbye": ["bye", "goodbye", "see you", "later"],
-            "weather": ["weather", "rain", "sunny", "forecast", 'sunrise', 'sunset', 'temperature', 'temp', 'wind', 'weather', 'rain', 'windy'],
+            "weather": ["weather", "rain", "sunny", "forecast", 'sunrise', 'sunset', 'temperature', 'temp', 'wind', 'weather', 'rain', 'windy', 'hot', 'cold', 'freezing', 'chilly', 'warm', 'humid'],
             "time": ["time", "hour", "clock"],
             "name": ["your name", "who are you"],
             "thanks": ["thank", "thanks", "thank you", "ty"],
