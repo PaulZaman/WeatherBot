@@ -31,6 +31,11 @@ WEATHER_CODE_MAP = {
 
 import pandas as pd
 
+import nltk
+import string
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+
 def load_city_list(path="cities1000.txt"):
     df = pd.read_csv(
         path,

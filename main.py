@@ -25,15 +25,18 @@ def main():
         page_title="WeatherBot 🌤️",
         page_icon="🌤️",
         layout="wide",
-        initial_sidebar_state="expanded"
+        initial_sidebar_state="collapsed"
     )
     
     # Initialize session state
     initialize_session_state()
     
-    # Sidebar
-    with st.sidebar:
-        st.title("ℹ️ How to Use")
+    # Main content
+    st.markdown("<h1 style='text-align: center;'>🌤️ WeatherBot</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'><em>Your friendly weather assistant with a sense of humor!</em></p>", unsafe_allow_html=True)
+    
+    # Info section below title
+    with st.expander("ℹ️ How to Use", expanded=False):
         st.markdown("""
         Welcome to **WeatherBot**! 🤖
         
@@ -54,7 +57,6 @@ def main():
         - Ask how I am: *"How are you?"*
         - Say goodbye: *"Bye"*, *"See you later"*
         - Thank me: *"Thanks"*, *"Thank you"*
-        - Ask me for the time (You should try this one)
         
         ---
         
@@ -65,15 +67,12 @@ def main():
         - Support for today, tomorrow, or specific weekdays
         - Friendly and funny responses with emojis
         """)
-        
-        # Clear chat button
-        if st.button("🗑️ Clear Chat History"):
-            st.session_state.messages = []
-            st.rerun()
     
-    # Main content
-    st.title("🌤️ WeatherBot")
-    st.markdown("*Your friendly weather assistant with a sense of humor!*")
+    # Clear chat button
+    if st.button("🗑️ Clear Chat History"):
+        st.session_state.messages = []
+        st.rerun()
+    
     st.divider()
     
     # Display chat history
