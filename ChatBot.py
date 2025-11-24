@@ -218,16 +218,12 @@ class Chatbot:
 
     def chat(self, user_input):
         intent = self.match_patterns(user_input)
-        print("Detected intent:", intent)
         if intent == "weather":
             # We use our own entity extraction, more robust than generic regex
             city = self.extract_cities(user_input, KNOWN_CITIES)
             time_keyword = self.extract_date(user_input)
             additional_keyword = self.extract_keywords(user_input)  # ['sunrise'], ['temp']
 
-            print("Extracted city:", city)
-            print("Extracted time keyword:", time_keyword)
-            print("Extracted additional keywords:", additional_keyword)
 
             weather_info = self.weather_api.get_weather(city, time_keyword)
 
