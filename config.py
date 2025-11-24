@@ -58,6 +58,9 @@ def load_city_list(path="cities1000.txt"):
     # remove countries with less than 4 letters to avoid false matches
     filtered = [city for city in joined if len(city) >= 4]
 
+    if "New York" not in filtered:
+        filtered.append("New York")
+
     return list(filtered)
 
 
