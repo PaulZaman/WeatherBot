@@ -1,6 +1,9 @@
 import streamlit as st
+import os
+import sys
+from pathlib import Path
+
 from ChatBot import Chatbot
-from WeatherBot import WeatherAPI
 
 
 def initialize_session_state():

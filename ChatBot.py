@@ -1,12 +1,19 @@
-from WeatherBot import WeatherAPI
+
 import random
 import re
 import string
 import nltk
 from spellchecker import SpellChecker
 import datetime
-from config import KNOWN_CITIES
 
+try:
+    # Case 1: imported as a package: from WeatherBot.WeatherBot import WeatherAPI
+    from WeatherBot.config import KNOWN_CITIES
+    from WeatherBot.WeatherAPI import WeatherAPI
+except ImportError:
+    # Case 2: run from inside WeatherBot/ as a plain script
+    from config import KNOWN_CITIES
+    from WeatherAPI import WeatherAPI
 
 class Chatbot:
     def __init__(self):

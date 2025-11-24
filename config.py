@@ -63,5 +63,8 @@ def load_city_list(path="cities1000.txt"):
 
     return list(filtered)
 
+from pathlib import Path
 
-KNOWN_CITIES = load_city_list("cities1000.txt")
+# Folder where config.py is located
+BASE_DIR = Path(__file__).resolve().parent
+KNOWN_CITIES = load_city_list(BASE_DIR / "cities1000.txt")
